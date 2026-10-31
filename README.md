@@ -1,0 +1,5 @@
+- Projekte BestellService und KundenService in Visual Studio.net geöffnet.
+- Die beiden ASP.NET Projekte werden gestartet mit Port 5001 und 5002
+- Projekt kunden-bestellung-angular in Visual Studio Code geöffnet. Starten das Projekt in Debug-Mode.
+- BrowserChrom wird gestartet mit Url http://localhost:4200
+- Öffnen eine zweite Seite in Browser http://localhost:4200. Dort werden Bestellungen hinzugefügt. Diese Änderungen werden auf der ersten Seite automatisch aktualisiert

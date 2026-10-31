@@ -46,8 +46,7 @@
               "RelativeToolTip": "KundenClient.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T14:11:11.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-31T14:11:11.343Z"
             },
             {
               "$type": "Document",
@@ -57,7 +56,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBYAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-31T14:40:13.784Z",
               "EditorCaption": ""
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Hubs\\BestellungenHub.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T14:38:20.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-31T14:38:20.773Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-31T14:35:46.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-31T14:35:46.183Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "Controllers\\BestellungenController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-30T21:31:23.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-30T21:31:23.031Z"
             }
           ]
         },

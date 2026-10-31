@@ -14,6 +14,7 @@ export class OrdersService {
 
 
   readonly orders = signal<Order[]>([]);
+  readonly customerFilter = signal<number | null>(null);
   readonly status = signal<Status>('loading');
   readonly live = signal<LiveZustand>('verbindet');
 

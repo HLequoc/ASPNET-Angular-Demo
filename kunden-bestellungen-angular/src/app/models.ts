@@ -6,11 +6,10 @@ export interface Customer {
 
 export interface Order {
   id: number;
-  customerID: number;
+  customerId: number;
   customerName: string;
   artikel: string;
   count: number;
 }
 
 export type Status = 'loading' | 'ready' | 'error';
-

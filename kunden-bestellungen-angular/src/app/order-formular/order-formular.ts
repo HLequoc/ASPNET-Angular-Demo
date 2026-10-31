@@ -56,6 +56,10 @@ export class OrderFormular {
     return feld.invalid && feld.touched;
   }
 
+  protected kundenAuswahlGeaendert(): void {
+    this.ordersService.customerFilter.set(this.form.controls.customerId.value);
+  }
+
   protected senden(): void {
     if (this.sendet()) {
       return;

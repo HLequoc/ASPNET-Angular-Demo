@@ -1,4 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
+import { CustomersService } from '../customers.service';
 import { OrdersService as OrdersService } from '../orders.service';
 
 @Component({
@@ -14,8 +15,25 @@ import { OrdersService as OrdersService } from '../orders.service';
       } @else if (orders.status() === 'loading' && lines().length === 0) {
         <p class="hinweis">Bestellungen werden geladen.</p>
       } @else if (lines().length === 0) {
-        <p class="hinweis">Noch keine Bestellungen. Lege rechts die erste an.</p>
+        @if (orders.customerFilter() !== null) {
+          <p class="hinweis">
+            Keine Bestellungen für {{ selectedCustomerName() }} gefunden.
+            <button type="button" class="knopf sekundaer" (click)="filterAufheben()">
+              Filter aufheben
+            </button>
+          </p>
+        } @else {
+          <p class="hinweis">Noch keine Bestellungen. Lege rechts die erste an.</p>
+        }
       } @else {
+        @if (orders.customerFilter() !== null) {
+          <p class="hinweis">
+            Bestellungen für {{ selectedCustomerName() }}.
+            <button type="button" class="knopf sekundaer" (click)="filterAufheben()">
+              Filter aufheben
+            </button>
+          </p>
+        }
         <div class="tabelle">
           <table>
             <thead>
@@ -44,7 +62,26 @@ import { OrdersService as OrdersService } from '../orders.service';
 })
 export class OrdersList {
   protected readonly orders = inject(OrdersService);
+  private readonly customers = inject(CustomersService);
 
   // Neueste Bestellung zuerst
-  protected readonly lines = computed(() => [...this.orders.orders()].reverse());
+  protected readonly lines = computed(() => {
+    const customerId = this.orders.customerFilter();
+    const orders = this.orders.orders();
+    return [
+      ...(customerId === null ? orders : orders.filter((order) => order.customerId === customerId)),
+    ].reverse();
+  });
+
+  protected readonly selectedCustomerName = computed(() => {
+    const customerId = this.orders.customerFilter();
+    return (
+      this.customers.customers().find((customer) => customer.id === customerId)?.name ??
+      `Kunde Nr. ${customerId}`
+    );
+  });
+
+  protected filterAufheben(): void {
+    this.orders.customerFilter.set(null);
+  }
 }

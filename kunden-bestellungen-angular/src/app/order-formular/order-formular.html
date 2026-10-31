@@ -4,7 +4,12 @@
   <form [formGroup]="form" (ngSubmit)="senden()" novalidate>
     <div class="feld">
       <label for="kunde">Kunde</label>
-      <select id="kunde" formControlName="customerId" [attr.aria-invalid]="showError('customerId')">
+      <select
+        id="kunde"
+        formControlName="customerId"
+        [attr.aria-invalid]="showError('customerId')"
+        (change)="kundenAuswahlGeaendert()"
+      >
         <option [ngValue]="null" disabled>
           {{ kundenFehlen() ? 'Keine Kunden geladen' : 'Kunde wählen' }}
         </option>

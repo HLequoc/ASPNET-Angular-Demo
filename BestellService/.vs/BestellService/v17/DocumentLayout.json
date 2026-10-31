@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|e:\\webapi-test-angular-aspnet\\bestellservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|e:\\webapi-test-angular-aspnet\\bestellservice\\controllers\\bestellungencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|solutionrelative:controllers\\bestellungencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|e:\\webapi-test-angular-aspnet\\bestellservice\\hubs\\bestellungenhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|solutionrelative:hubs\\bestellungenhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|e:\\webapi-test-angular-aspnet\\bestellservice\\kundenclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|solutionrelative:kundenclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|e:\\webapi-test-angular-aspnet\\bestellservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{96114F8F-32B0-4C02-A57D-0F48D69628B9}|BestellService.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KundenClient.cs",
+              "DocumentMoniker": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\KundenClient.cs",
+              "RelativeDocumentMoniker": "KundenClient.cs",
+              "ToolTip": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\KundenClient.cs",
+              "RelativeToolTip": "KundenClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T14:11:11.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T14:40:13.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BestellungenHub.cs",
+              "DocumentMoniker": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\Hubs\\BestellungenHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\BestellungenHub.cs",
+              "ToolTip": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\Hubs\\BestellungenHub.cs",
+              "RelativeToolTip": "Hubs\\BestellungenHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T14:38:20.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-31T14:35:46.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BestellungenController.cs",
+              "DocumentMoniker": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\Controllers\\BestellungenController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BestellungenController.cs",
+              "ToolTip": "E:\\WebAPI-Test-Angular-ASPNET\\BestellService\\Controllers\\BestellungenController.cs",
+              "RelativeToolTip": "Controllers\\BestellungenController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T21:31:23.031Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 127,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestellService", "BestellService.csproj", "{96114F8F-32B0-4C02-A57D-0F48D69628B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96114F8F-32B0-4C02-A57D-0F48D69628B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96114F8F-32B0-4C02-A57D-0F48D69628B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96114F8F-32B0-4C02-A57D-0F48D69628B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96114F8F-32B0-4C02-A57D-0F48D69628B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E20D2D08-B4D4-46F8-ADF4-5B20D584FF2B}
+	EndGlobalSection
+EndGlobal

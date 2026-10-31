@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "BestellService": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/bestellungen",
+      "applicationUrl": "http://localhost:5002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

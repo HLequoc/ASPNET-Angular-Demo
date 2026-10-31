@@ -1,0 +1,60 @@
+<section class="formular" aria-labelledby="formular-titel">
+  <h2 id="formular-titel">Bestellung anlegen</h2>
+
+  <form [formGroup]="form" (ngSubmit)="senden()" novalidate>
+    <div class="feld">
+      <label for="kunde">Kunde</label>
+      <select id="kunde" formControlName="customerId" [attr.aria-invalid]="showError('customerId')">
+        <option [ngValue]="null" disabled>
+          {{ kundenFehlen() ? 'Keine Kunden geladen' : 'Kunde wählen' }}
+        </option>
+        @for (k of customers(); track k.id) {
+          <option [ngValue]="k.id">{{ k.name }} (Nr. {{ k.id }})</option>
+        }
+      </select>
+      @if (showError('customerId')) {
+        <p class="feldfehler">Wähle einen Kunden.</p>
+      }
+    </div>
+
+    <div class="feld">
+      <label for="artikel">Artikel</label>
+      <input
+        id="artikel"
+        type="text"
+        formControlName="artikel"
+        autocomplete="off"
+        [attr.aria-invalid]="showError('artikel')"
+      />
+      @if (showError('artikel')) {
+        <p class="feldfehler">Gib einen Artikel an (höchstens 80 Zeichen).</p>
+      }
+    </div>
+
+    <div class="feld menge">
+      <label for="count">Menge</label>
+      <input
+        id="count"
+        type="number"
+        min="1"
+        max="999"
+        inputmode="numeric"
+        formControlName="count"
+        [attr.aria-invalid]="showError('count')"
+      />
+      @if (showError('count')) {
+        <p class="feldfehler">Die Menge muss zwischen 1 und 999 liegen.</p>
+      }
+    </div>
+
+    <button type="submit" class="knopf primaer" [disabled]="sendet()">
+      {{ sendet() ? 'Bestellung wird angelegt' : 'Bestellung anlegen' }}
+    </button>
+  </form>
+
+  <div class="meldung" aria-live="polite">
+    @if (message(); as m) {
+      <p [class]="'meldungstext ' + m.art">{{ m.text }}</p>
+    }
+  </div>
+</section>

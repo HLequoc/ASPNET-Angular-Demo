@@ -1,0 +1,137 @@
+:root {
+  --papier: #f2f4f7;
+  --flaeche: #ffffff;
+  --tinte: #1d2733;
+  --gedaempft: #5b6676;
+  --linie: #d5dbe3;
+  --rand-feld: #8d97a5;
+  --akzent: #0b5cad;
+  --akzent-dunkel: #094a8c;
+  --ok: #1a7f4b;
+  --fehler: #b42318;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--tinte);
+  font-family: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+app-bestell-formular,
+app-bestellungen-liste,
+app-kunden-liste {
+  display: block;
+}
+
+/* Tabellen */
+.tabelle {
+  overflow-x: auto;
+  border-top: 2px solid var(--tinte);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 8px 12px 8px 0;
+  color: var(--gedaempft);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+td {
+  padding: 10px 12px 10px 0;
+  border-top: 1px solid var(--linie);
+}
+
+.zahl {
+  width: 1%;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+th.zahl:last-child,
+td.zahl:last-child {
+  padding-right: 0;
+  text-align: right;
+}
+
+/* Hinweise bei leeren oder fehlerhaften Listen */
+.hinweis {
+  margin: 0;
+  padding: 12px 0 12px 12px;
+  border-left: 3px solid var(--linie);
+  color: var(--gedaempft);
+}
+
+.hinweis.fehler {
+  border-left-color: var(--fehler);
+  color: var(--fehler);
+}
+
+/* Schaltflächen */
+.knopf {
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.knopf.primaer {
+  background: var(--akzent);
+  color: #fff;
+}
+
+.knopf.primaer:hover:not(:disabled) {
+  background: var(--akzent-dunkel);
+}
+
+.knopf.sekundaer {
+  border-color: var(--rand-feld);
+  background: var(--flaeche);
+  color: var(--tinte);
+}
+
+.knopf.sekundaer:hover {
+  background: #e8ecf1;
+}
+
+.knopf:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+:focus-visible {
+  outline: 2px solid var(--akzent);
+  outline-offset: 2px;
+}

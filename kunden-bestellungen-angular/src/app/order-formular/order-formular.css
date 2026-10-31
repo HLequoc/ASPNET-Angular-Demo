@@ -1,0 +1,70 @@
+.formular {
+  padding: 20px;
+  border: 1px solid var(--linie);
+  border-top: 3px solid var(--akzent);
+  border-radius: 6px;
+  background: var(--flaeche);
+}
+
+.feld {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.menge input {
+  width: 120px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--rand-feld);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--tinte);
+  font: inherit;
+}
+
+input[aria-invalid='true'],
+select[aria-invalid='true'] {
+  border-color: var(--fehler);
+}
+
+.feldfehler {
+  margin: 0;
+  color: var(--fehler);
+  font-size: 14px;
+}
+
+.knopf {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.meldung {
+  min-height: 24px;
+  margin-top: 16px;
+}
+
+.meldungstext {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--gedaempft);
+  font-size: 14px;
+}
+
+.meldungstext.ok {
+  border-left-color: var(--ok);
+}
+
+.meldungstext.fehler {
+  border-left-color: var(--fehler);
+  color: var(--fehler);
+}

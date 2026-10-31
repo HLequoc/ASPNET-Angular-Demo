@@ -1,0 +1,23 @@
+<header class="kopf">
+  <div class="titelzeile">
+    <h1>Kunden und Bestellungen</h1>
+    <button type="button" class="knopf sekundaer" (click)="update()">Aktualisieren</button>
+  </div>
+  <div class="dienste">
+    <app-service-status name="CustomersService" adresse="localhost:5001" [status]="customers.status()" />
+    <app-service-status name="OrdersService" adresse="localhost:5002" [status]="orders.status()" />
+    <app-service-status
+            name="Live-Updates"
+            adresse="SignalR"
+            [status]="liveZustand()"
+            textBereit="verbunden"
+            textFehler="getrennt"
+            textLaedt="verbindet"/>
+  </div>
+</header>
+
+<main class="inhalt">
+  <app-order-formular class="bereich-formular" />
+  <app-orders-list class="bereich-bestellungen" />
+  <app-customers-list class="bereich-kunden" />
+</main>

@@ -14,7 +14,8 @@
            export const ORDERS_API = 'http://localhost:5002/api/bestellungen';
 
     die Services rufen API über get post:
-    <img width="576" height="206" alt="image" src="https://github.com/user-attachments/assets/b451ae36-6781-4efb-a382-44159b4e16c5" />
+    <br>
+    <img width="576" height="206" alt="image" src="https://github.com/user-attachments/assets/b451ae36-6781-4efb-a382-44159b4e16c5" /><br>
     <img width="514" height="91" alt="image" src="https://github.com/user-attachments/assets/8470e4d1-5477-4fe9-94bb-591c41238178" />
 
 

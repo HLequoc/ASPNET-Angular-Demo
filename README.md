@@ -9,8 +9,8 @@
   - die Services werden in app.ts hochgeladen:
            protected readonly customers = inject(CustomersService);
            protected readonly orders = inject(OrdersService);
-  - Urls von Sevices werden in api.config.ts definiert:
-           export const CUSTOMERS_API = 'http://localhost:5001/api/kunden';
+  - Urls von Sevices werden in api.config.ts definiert:<br>
+           export const CUSTOMERS_API = 'http://localhost:5001/api/kunden'; <br>
            export const ORDERS_API = 'http://localhost:5002/api/bestellungen';
 
     die Services rufen API über get post:

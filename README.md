@@ -6,7 +6,7 @@
 
   Beschreibung:
   - die beiden Services werden in customers.service.ts und orders.services.ts definiert
-  - die Services werden in app.ts hochgeladen:
+  - die Services werden in app.ts hochgeladen:<br>
            protected readonly customers = inject(CustomersService);<br>
            protected readonly orders = inject(OrdersService);
   - Urls von Sevices werden in api.config.ts definiert:<br>

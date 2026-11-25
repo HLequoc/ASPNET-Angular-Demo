@@ -68,8 +68,7 @@ public class KundenControllerTests
                     "KundeAngelegt",
                     It.Is<object?[]>(args =>
                         args.Length == 1 &&
-                        args[0] is Kunde &&
-                        args[0] == kunde),
+                        object.Equals(args[0], kunde)),
                     It.IsAny<CancellationToken>()),
                 Times.Once);
         }

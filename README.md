@@ -62,7 +62,7 @@ Aktualisierung der anderen Browsern beim Hinzufügen von einem Kunden <br>
       <img  style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/b517f8ce-6820-4654-9cd6-0fce9fca0069" /> <br>
       und <br>
       <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/31d93bbd-bf6e-483d-b54d-5f013c84bdb8" /> <br>
-      in:
+      in:<br>
       <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/c9ea4bc4-7a4f-4f72-a7f2-f9ca893f6628" /> <br>
       Kontakt.ts: Überwachung der Änderung starten<br>
       <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/99bdc338-eab8-4ef9-b849-09d368ac6f7c" /> <br>

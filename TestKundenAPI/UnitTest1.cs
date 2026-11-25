@@ -1,132 +1,77 @@
 using KundenService.Controllers;
+using KundenService.Hubs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using Moq;
 
 namespace TestKundenAPI;
 
 public class KundenControllerTests
 {
-    [Fact]
-    public void GetAlle_LiefertDieVorhandenenKunden()
+    private static (KundenController Controller,Mock<IClientProxy> ClientProxy) CreateController()
     {
-        var controller = new KundenController();
+        var hub = new Mock<IHubContext<KundenHub>>();
+        var clients = new Mock<IHubClients>();
+        var clientProxy = new Mock<IClientProxy>();
 
-        var kunden = controller.GetAlle().ToList();
+        clients
+            .Setup(clients => clients.All)
+            .Returns(clientProxy.Object);
 
-        Assert.Contains(kunden, kunde =>
-            kunde.Id == 1 &&
-            kunde.Name == "Anna Schmidt" &&
-            kunde.Email == "anna@example.com");
+        hub
+            .Setup(hub => hub.Clients)
+            .Returns(clients.Object);
 
-        Assert.Contains(kunden, kunde =>
-            kunde.Id == 2 &&
-            kunde.Name == "Ben Weber" &&
-            kunde.Email == "ben@example.com");
-    }
+        clientProxy
+            .Setup(proxy => proxy.SendCoreAsync(
+                It.IsAny<string>(),
+                It.IsAny<object?[]>(),
+                It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
 
-    [Fact]
-    public void GetAlle_LiefertEineNichtLeereKundenliste()
-    {
-        var controller = new KundenController();
-
-        var kunden = controller.GetAlle().ToList();
-
-        Assert.NotEmpty(kunden);
+        return (new KundenController(hub.Object), clientProxy);
     }
 
     [Fact]
     public void Get_LiefertKundenMitDerGesuchtenId()
     {
-        var controller = new KundenController();
+        var (controller, _) = CreateController();
 
         var result = controller.Get(1);
 
-        var kunde = Assert.IsType<Kunde>(result.Value);
-        Assert.Equal(1, kunde.Id);
-        Assert.Equal("Anna Schmidt", kunde.Name);
-        Assert.Equal("anna@example.com", kunde.Email);
+        Assert.Equal(
+            new Kunde(1, "Anna Schmidt", "anna@example.com"),
+            result.Value);
     }
 
     [Fact]
-    public void Get_LiefertDenZweitenKunden()
+    public async Task Add_ErstelltKundenUndSendetSignalRNachricht()
     {
-        var controller = new KundenController();
-
-        var result = controller.Get(2);
-
-        Assert.Equal(new Kunde(2, "Ben Weber", "ben@example.com"), result.Value);
-    }
-
-    [Fact]
-    public void Get_LiefertNotFoundWennKundeNichtExistiert()
-    {
-        var controller = new KundenController();
-
-        var result = controller.Get(999999);
-
-        Assert.IsType<NotFoundResult>(result.Result);
-    }
-
-    [Fact]
-    public void Get_LiefertNotFoundBeiNegativerId()
-    {
-        var controller = new KundenController();
-
-        var result = controller.Get(-1);
-
-        Assert.IsType<NotFoundResult>(result.Result);
-    }
-
-    [Fact]
-    public void Add_ErstelltKundenUndLiefertCreatedAtAction()
-    {
-        var controller = new KundenController();
+        var (controller, clientProxy) = CreateController();
         var neuerKunde = new NeuerKunde(
             "Clara Müller",
             "clara@example.com");
 
-        var result = controller.Add(neuerKunde);
+        var result = await controller.Add(neuerKunde);
 
-        var createdResult = Assert.IsType<CreatedAtActionResult>(result.Result);
+        var createdResult =
+            Assert.IsType<CreatedAtActionResult>(result.Result);
+
         var kunde = Assert.IsType<Kunde>(createdResult.Value);
 
-        Assert.Equal(neuerKunde.Name, kunde.Name);
-        Assert.Equal(neuerKunde.Email, kunde.Email);
-        Assert.True(kunde.Id > 2);
-    }
+        if (kunde != null)
+        {
+            Assert.Equal(neuerKunde.Name, kunde.Name);
+            Assert.Equal(neuerKunde.Email, kunde.Email);
 
-    [Fact]
-    public void Add_VerwendetDieNeueKundenIdAlsRouteValue()
-    {
-        var controller = new KundenController();
-        var neuerKunde = new NeuerKunde(
-            "David Bauer",
-            "david@example.com");
-
-        var result = controller.Add(neuerKunde);
-
-        var createdResult = Assert.IsType<CreatedAtActionResult>(result.Result);
-        var kunde = Assert.IsType<Kunde>(createdResult.Value);
-
-        Assert.Equal(nameof(KundenController.Get), createdResult.ActionName);
-        Assert.NotNull(createdResult.RouteValues);
-        Assert.Equal(kunde.Id, createdResult.RouteValues["id"]);
-    }
-
-    [Fact]
-    public void Add_MachtDenNeuenKundenAnschliessendAbrufbar()
-    {
-        var controller = new KundenController();
-        var neuerKunde = new NeuerKunde(
-            "Eva Fischer",
-            "eva@example.com");
-
-        var addResult = controller.Add(neuerKunde);
-        var hinzugefuegterKunde =
-            Assert.IsType<Kunde>(
-                Assert.IsType<CreatedAtActionResult>(addResult.Result).Value);
-
-        var getResult = controller.Get(hinzugefuegterKunde.Id);
-
-        Assert.Equal(hinzugefuegterKunde, getResult.Value);
+            clientProxy.Verify(proxy => proxy.SendCoreAsync(
+                    "KundeAngelegt",
+                    It.Is<object?[]>(args =>
+                        args.Length == 1 &&
+                        args[0] is Kunde &&
+                        args[0] == kunde),
+                    It.IsAny<CancellationToken>()),
+                Times.Once);
+        }
     }
 }

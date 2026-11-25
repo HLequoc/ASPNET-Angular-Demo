@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
-import { CUSTOMERS_API } from './api.config';
-import { Customer, Status } from './models';
+import { CUSTOMERS_API } from '../api.config';
+import { Customer, Status } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class CustomersService {

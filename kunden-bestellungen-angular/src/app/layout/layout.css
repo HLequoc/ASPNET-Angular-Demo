@@ -1,0 +1,17 @@
+.kopf { background: #1b5e9b; color: white; padding: 1rem 1.5rem; }
+.kopf h1 { margin: 0; font-size: 1.6rem; }
+.kopf p { margin: 0.3rem 0 0; opacity: 0.85; }
+
+.menue { display: flex; gap: 0.25rem; background: #e8eef4; padding: 0 1rem; }
+.menue a { padding: 0.7rem 1rem; text-decoration: none; color: #1b5e9b; }
+.menue a:hover { background: #d3e0ec; }
+.menue a.aktiv { font-weight: bold; border-bottom: 3px solid #1b5e9b; }
+
+.inhalt { flex: 1; padding: 1.5rem; }
+
+.fuss { padding: 1rem 1.5rem; background: #f2f2f2; color: #555; border-top: 1px solid #ddd; }
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

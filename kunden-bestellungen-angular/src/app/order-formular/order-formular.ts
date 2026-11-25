@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { OrdersService } from '../orders.service';
-import { CustomersService } from '../customers.service';
+import { OrdersService } from '../services/orders.service';
+import { CustomersService } from '../services/customers.service';
 
 interface Message {
   art: 'ok' | 'fehler';

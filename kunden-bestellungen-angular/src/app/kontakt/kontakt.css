@@ -1,0 +1,62 @@
+.kopf {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 24px 24px;
+}
+
+.titelzeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 16px;
+}
+
+.dienste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.inhalt {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-areas:
+    'bestellungen formular'
+    'kunden formular';
+  gap: 40px 48px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 8px 24px 64px;
+}
+
+.bereich-formular {
+  grid-area: formular;
+  align-self: start;
+  position: sticky;
+  top: 24px;
+}
+
+.bereich-bestellungen {
+  grid-area: bestellungen;
+}
+
+.bereich-kunden {
+  grid-area: kunden;
+}
+
+@media (max-width: 860px) {
+  .inhalt {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'formular'
+      'bestellungen'
+      'kunden';
+    gap: 32px;
+  }
+
+  .bereich-formular {
+    position: static;
+  }
+}

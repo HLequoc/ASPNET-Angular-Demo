@@ -2,8 +2,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { HubConnection, HubConnectionBuilder, HubConnectionState, LogLevel } from '@microsoft/signalr';
 import { Observable, tap } from 'rxjs';
-import { ORDERS_API, ORDERS_HUB } from './api.config';
-import { Order, Status } from './models';
+import { ORDERS_API, ORDERS_HUB } from '../api.config';
+import { Order, Status } from '../models';
 
 export type LiveZustand = 'verbindet' | 'verbunden' | 'getrennt';
 

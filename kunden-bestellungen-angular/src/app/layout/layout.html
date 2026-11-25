@@ -1,0 +1,24 @@
+<header class="kopf">
+  <h1>Meine Firma</h1>
+  <p>Angular-Layout nach dem Vorbild von _Layout.cshtml</p>
+</header>
+
+<nav class="menue">
+  @for (punkt of menue; track punkt.pfad) {
+    <a
+      [routerLink]="punkt.pfad"
+      routerLinkActive="aktiv"
+      [routerLinkActiveOptions]="{ exact: punkt.pfad === '/' }"
+    >
+      {{ punkt.text }}
+    </a>
+  }
+</nav>
+
+<main class="inhalt">
+  <router-outlet />
+</main>
+
+<footer class="fuss">
+  &copy; {{ jahr }} Meine Firma
+</footer>

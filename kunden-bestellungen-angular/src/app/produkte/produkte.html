@@ -1,0 +1,6 @@
+<h2>Produkte</h2>
+<ul>
+  @for (p of produkte; track p.name) {
+    <li>{{ p.name }}: {{ p.preis }} €</li>
+  }
+</ul>

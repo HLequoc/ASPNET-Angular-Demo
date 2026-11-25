@@ -1,6 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
-import { CustomersService } from '../customers.service';
-import { OrdersService as OrdersService } from '../orders.service';
+import { CustomersService } from '../services/customers.service';
+import { OrdersService as OrdersService } from '../services/orders.service';
 
 @Component({
   selector: 'app-orders-list',

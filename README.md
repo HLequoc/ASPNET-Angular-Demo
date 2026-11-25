@@ -25,7 +25,7 @@ Layout implementierung
 
     providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes),  provideHttpClient()],
 -   app.html <br>
-     <router-outlet />
+     "<router-outlet />"
 -   app.routes.ts <br>
     <img width="759" height="314" alt="image" src="https://github.com/user-attachments/assets/33c4830b-d7ef-4ed6-b9bd-420c1a65e7a1" />
     <br>

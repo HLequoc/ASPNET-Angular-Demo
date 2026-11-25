@@ -58,6 +58,9 @@ Aktualisierung der anderen Browsern beim Hinzufügen von einem Kunden <br>
       HubConnection unf LiveStatus hinzufügen <br>
       <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/e1296b2f-5341-47dc-8237-1702699ed72a" /> <br>
       liveStarten und connectionBuilder (event connection.on, connection.onreconnecting, connection.onreconnected, connection.onclose) <br>
+      Wichtige Info: connection.on('KundeAngelegt', .... Der Name "KundeAngelegt" muss identisch mit Aufruf von API <br>
+      <img  style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/b517f8ce-6820-4654-9cd6-0fce9fca0069" /> <br>
+
       <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/c9ea4bc4-7a4f-4f72-a7f2-f9ca893f6628" /> <br>
       Kontakt.ts: Überwachung der Änderung starten<br>
       <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/99bdc338-eab8-4ef9-b849-09d368ac6f7c" /> <br>

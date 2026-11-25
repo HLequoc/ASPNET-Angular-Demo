@@ -19,12 +19,12 @@
     <img alt="image" src="https://github.com/user-attachments/assets/8470e4d1-5477-4fe9-94bb-591c41238178" />
 
 Layout implementierung
-- app.config.ts
-    import { provideRouter } from '@angular/router';
-    import { routes } from './app.routes';
+- app.config.ts <br>
+    import { provideRouter } from '@angular/router';<br>
+    import { routes } from './app.routes';<br>
 
     providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes),  provideHttpClient()],
--   app.html
+-   app.html <br>
      <router-outlet />
 -   app.routes.ts <br>
     <img width="759" height="314" alt="image" src="https://github.com/user-attachments/assets/33c4830b-d7ef-4ed6-b9bd-420c1a65e7a1" />

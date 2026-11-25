@@ -68,6 +68,8 @@ Aktualisierung der anderen Browsern beim Hinzufügen von einem Kunden <br>
         <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/75c6d396-c6b3-4465-9fad-7874ccba0251" /> <br>
         KundenHub.cs wird angelegt: <br>
         <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/9c3e5fed-55b0-4d23-9803-bc4f22bae100" /> <br>
+        program.cs : MapHub hinzufügen
+        <img  style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/14608b28-d07f-4b5f-91dc-802d64271bea" /> <br>
 
 
 

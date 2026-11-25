@@ -48,5 +48,5 @@ Test API Funktionen mit CoPilot <br>
   dotnet run --project .\KundenService\KundenService.csproj <br>
   http://localhost:5001/swagger <br>
   
-  <img width="1073" height="648" alt="image" src="https://github.com/user-attachments/assets/1755984b-d96b-48d4-8746-400e96edc001" /><br>
+  <img alt="image" src="https://github.com/user-attachments/assets/1755984b-d96b-48d4-8746-400e96edc001" /><br>
 - UniTest wird hinzugefügt

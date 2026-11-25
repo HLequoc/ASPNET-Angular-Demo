@@ -15,8 +15,8 @@
 
     die Services rufen API über get post:
     <br>
-    <img style="width: auto; height: auto;" alt="image" src="https://github.com/user-attachments/assets/b451ae36-6781-4efb-a382-44159b4e16c5" /><br>
-    <img alt="image" src="https://github.com/user-attachments/assets/8470e4d1-5477-4fe9-94bb-591c41238178" />
+    <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/b451ae36-6781-4efb-a382-44159b4e16c5" /><br>
+    <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/8470e4d1-5477-4fe9-94bb-591c41238178" />
 
 Layout implementierung
 - app.config.ts <br>

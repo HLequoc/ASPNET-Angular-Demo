@@ -8,7 +8,7 @@ import { OrdersList} from '../orders-list/orders-list';
 import { Status } from '../models';
 
 @Component({
-  imports: [OrderFormular, CustomerList, OrdersList, ServiceStatus],
+  imports: [CustomerList, ServiceStatus],
   selector: 'app-kontakt',
   styleUrl: './kontakt.css',
   templateUrl: './kontakt.html',
@@ -16,18 +16,7 @@ import { Status } from '../models';
 export class Kontakt 
 {
    protected readonly customers = inject(CustomersService);
-  protected readonly orders = inject(OrdersService);
 
-  protected readonly liveZustand = computed<Status>(() => {
-    switch (this.orders.live()) {
-      case 'verbunden':
-        return 'ready';
-      case 'getrennt':
-        return 'error';
-      default:
-        return 'loading';
-    }
-  });
 
   constructor() {
     this.update();
@@ -35,8 +24,6 @@ export class Kontakt
 
   protected update(): void {
     this.customers.laden();
-    this.orders.laden();
-    this.orders.liveStarten();
   }
 }
 

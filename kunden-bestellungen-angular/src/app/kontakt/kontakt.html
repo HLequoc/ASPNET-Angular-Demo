@@ -5,8 +5,59 @@
   </div>
   <div class="dienste">
     <app-service-status name="CustomersService" adresse="localhost:5001" [status]="customers.status()" />
+    <app-service-status
+      name="Live-Updates"
+      adresse="localhost:5001/hubs/kunden"
+      [status]="customers.liveStatus()"
+      textBereit="verbunden"
+      textFehler="getrennt"
+      textLaedt="verbindet"
+    />
   </div>
 </header>
  <main class="inhalt">
     <app-customers-list class="bereich-kunden" />
+    <section class="formular bereich-formular" aria-labelledby="formular-titel">
+      <h2 id="formular-titel">Kunden hinzufügen</h2>
+
+      <form [formGroup]="form" (ngSubmit)="senden()" novalidate>
+        <div class="feld">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            autocomplete="name"
+            [attr.aria-invalid]="showError('name')"
+          />
+          @if (showError('name')) {
+            <p class="feldfehler">Gib einen Namen an.</p>
+          }
+        </div>
+
+        <div class="feld">
+          <label for="email">E-Mail</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            autocomplete="email"
+            [attr.aria-invalid]="showError('email')"
+          />
+          @if (showError('email')) {
+            <p class="feldfehler">Gib eine gültige E-Mail-Adresse an.</p>
+          }
+        </div>
+
+        <button type="submit" class="knopf primaer" [disabled]="sendet()">
+          {{ sendet() ? 'Kunde wird angelegt' : 'Kunde hinzufügen' }}
+        </button>
+      </form>
+
+      <div class="meldung" aria-live="polite">
+        @if (message(); as m) {
+          <p [class]="'meldungstext ' + m.art">{{ m.text }}</p>
+        }
+      </div>
+    </section>
  </main>

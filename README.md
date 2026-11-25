@@ -50,3 +50,30 @@ Test API Funktionen mit CoPilot <br>
   
   <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/1755984b-d96b-48d4-8746-400e96edc001" /><br>
 - UniTest wird hinzugefügt
+
+Aktualisierung der anderen Browsern beim Hinzufügen von einem Kunden <br>
+- api.config.ts: CUSTOMERS_HUB hinzufügen <br>
+<img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/867bda60-d00d-4b49-91e9-cc8794567f8e" /> <br>
+- customers.service.ts <br>:
+      HubConnection unf LiveStatus hinzufügen <br>
+      <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/e1296b2f-5341-47dc-8237-1702699ed72a" /> <br>
+      liveStarten und connectionBuilder (event connection.on, connection.onreconnecting, connection.onreconnected, connection.onclose) <br>
+      <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/c9ea4bc4-7a4f-4f72-a7f2-f9ca893f6628" /> <br>
+      Kontakt.ts: Überwachung der Änderung starten<br>
+      <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/99bdc338-eab8-4ef9-b849-09d368ac6f7c" /> <br>
+      ASP.NET KundenController.cs <br>
+        IHubContext-Service injected:<br>
+         <img  style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/6812e810-15f6-4184-ac91-74508fa509ac" /> <br>
+        Beim Kundenhinzufügen werden Browser zurückgerufen: <br>
+        <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/75c6d396-c6b3-4465-9fad-7874ccba0251" /> <br>
+        KundenHub.cs wird angelegt: <br>
+        <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/9c3e5fed-55b0-4d23-9803-bc4f22bae100" /> <br>
+
+
+
+
+
+
+
+
+

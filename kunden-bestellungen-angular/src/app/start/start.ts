@@ -34,7 +34,10 @@ export class Start{
 
   protected update(): void {
     this.customers.laden();
+    this.customers.gesundheitPruefungStarten();
+    this.customers.liveStarten();
     this.orders.laden();
+    this.orders.gesundheitPruefungStarten();
     this.orders.liveStarten();
   }
 }

@@ -5,14 +5,23 @@
   </div>
   <div class="dienste">
     <app-service-status name="CustomersService" adresse="localhost:5001" [status]="customers.status()" />
+    <app-service-status
+      name="Kunden-Live-Updates"
+      adresse="localhost:5001/hubs/kunden"
+      [status]="customers.liveStatus()"
+      textBereit="verbunden"
+      textFehler="getrennt"
+      textLaedt="verbindet"
+    />
     <app-service-status name="OrdersService" adresse="localhost:5002" [status]="orders.status()" />
     <app-service-status
-            name="Live-Updates"
-            adresse="SignalR"
-            [status]="liveZustand()"
-            textBereit="verbunden"
-            textFehler="getrennt"
-            textLaedt="verbindet"/>
+      name="Bestell-Live-Updates"
+      adresse="localhost:5002/hubs/bestellungen"
+      [status]="liveZustand()"
+      textBereit="verbunden"
+      textFehler="getrennt"
+      textLaedt="verbindet"
+    />
   </div>
 </header>
  <main class="inhalt">

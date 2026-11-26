@@ -34,6 +34,7 @@ export class Kontakt {
 
   constructor() {
     this.update();
+    this.customers.gesundheitPruefungStarten();
     this.customers.liveStarten();
   }
 

@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSignalR();
+builder.Services.AddHealthChecks();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -33,5 +34,6 @@ if (app.Environment.IsDevelopment())
 app.UseCors();
 app.MapControllers();
 app.MapHub<KundenHub>("/hubs/kunden");
+app.MapHealthChecks("/health");
 
 app.Run();

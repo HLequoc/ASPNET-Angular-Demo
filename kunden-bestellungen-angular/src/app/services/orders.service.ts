@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { HubConnection, HubConnectionBuilder, HubConnectionState, LogLevel } from '@microsoft/signalr';
 import { Observable, tap } from 'rxjs';
-import { ORDERS_API, ORDERS_HUB } from '../api.config';
+import { ORDERS_API, ORDERS_HEALTH, ORDERS_HUB } from '../api.config';
 import { Order, Status } from '../models';
 
 export type LiveZustand = 'verbindet' | 'verbunden' | 'getrennt';
@@ -11,15 +11,28 @@ export type LiveZustand = 'verbindet' | 'verbunden' | 'getrennt';
 export class OrdersService {
   private readonly http = inject(HttpClient);
   private connection?: HubConnection;
-
+  private healthPolling?: ReturnType<typeof setInterval>;
+  private reconnectTimer?: ReturnType<typeof setTimeout>;
 
   readonly orders = signal<Order[]>([]);
   readonly customerFilter = signal<number | null>(null);
   readonly status = signal<Status>('loading');
   readonly live = signal<LiveZustand>('verbindet');
 
+  gesundheitPruefungStarten(): void {
+    if (this.healthPolling !== undefined) {
+      return;
+    }
+
+    this.healthPolling = setInterval(() => {
+      this.http.get(ORDERS_HEALTH, { responseType: 'text' }).subscribe({
+        next: () => this.status.set('ready'),
+        error: () => this.status.set('error'),
+      });
+    }, 5_000);
+  }
+
   laden(): void {
-    this.status.set('loading');
     this.http.get<Order[]>(ORDERS_API).subscribe({
       next: (liste) => {
         this.orders.set(liste);
@@ -39,22 +52,14 @@ export class OrdersService {
 
     return this.http
       .post<Order>(ORDERS_API, null, { params })
-      .pipe(tap(() => this.laden()));
+      .pipe(tap((bestellung) => this.bestellungHinzufuegen(bestellung)));
   }
 
   liveStarten(): void {
       if (!this.connection) {
         this.connection = this.connectionBuilder();
       }
-      if (this.connection.state !== HubConnectionState.Disconnected) {
-        return;
-      }
-
-      this.live.set('verbindet');
-      this.connection
-        .start()
-        .then(() => this.live.set('verbunden'))
-        .catch(() => this.live.set('getrennt'));
+      this.verbinden();
   }
 
   private connectionBuilder(): HubConnection {
@@ -65,9 +70,7 @@ export class OrdersService {
         .build();
 
       connection.on('BestellungAngelegt', (neu: Order) => {
-              this.orders.update((liste) =>
-                liste.some((b) => b.id === neu.id) ? liste : [...liste, neu].sort((a, b) => a.id - b.id),
-              );
+              this.bestellungHinzufuegen(neu);
       });
 
       connection.onreconnecting(() => this.live.set('verbindet'));
@@ -75,8 +78,52 @@ export class OrdersService {
               this.live.set('verbunden');
               this.laden();
             });
-      connection.onclose(() => this.live.set('getrennt'));
+      connection.onclose(() => {
+        this.live.set('getrennt');
+        this.erneutVerbinden();
+      });
 
       return connection;
+  }
+
+  private verbinden(): void {
+      if (!this.connection || this.connection.state !== HubConnectionState.Disconnected) {
+        return;
+      }
+
+      this.live.set('verbindet');
+      this.connection
+        .start()
+        .then(() => {
+          this.live.set('verbunden');
+          if (this.reconnectTimer !== undefined) {
+            clearTimeout(this.reconnectTimer);
+            this.reconnectTimer = undefined;
+          }
+        })
+        .catch(() => {
+          this.live.set('getrennt');
+          this.erneutVerbinden();
+        });
+  }
+
+  private erneutVerbinden(): void {
+      if (this.reconnectTimer !== undefined) {
+        return;
+      }
+
+      this.reconnectTimer = setTimeout(() => {
+        this.reconnectTimer = undefined;
+        this.verbinden();
+      }, 5000);
+  }
+
+  private bestellungHinzufuegen(neu: Order): void {
+    this.orders.update((liste) =>
+      liste.some((bestellung) => bestellung.id === neu.id)
+        ? liste
+        : [...liste, neu].sort((a, b) => a.id - b.id),
+    );
+    this.status.set('ready');
   }
 }

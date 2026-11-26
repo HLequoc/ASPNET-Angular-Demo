@@ -3,9 +3,9 @@ import { Status } from '../models';
 
 @Component({
   selector: 'app-service-status',
-  host: { '[attr.data-zustand]': 'status()', role: 'status' },
+  host: { '[attr.data-zustand]': 'status()'},
   template: `
-    <span class="punkt" aria-hidden="true"></span>
+    <span class="punkt"></span>
     <span class="name">{{ name() }}</span>
     <span class="adresse">{{ adresse() }}</span>
     <span class="text">{{ text() }}</span>
@@ -22,8 +22,8 @@ import { Status } from '../models';
       font-size: 14px;
     }
     .punkt {
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
       background: var(--gedaempft);
       align-self: center;

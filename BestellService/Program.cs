@@ -4,6 +4,7 @@ using BestellService.Hubs;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSignalR();
+builder.Services.AddHealthChecks();
 
 // Erlaubt dem Angular-Frontend (ng serve, Port 4200) den Zugriff aus dem Browser
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy
@@ -21,4 +22,5 @@ var app = builder.Build();
 app.UseCors();
 app.MapControllers();
 app.MapHub<BestellungenHub>("/hubs/bestellungen");
+app.MapHealthChecks("/health");
 app.Run();

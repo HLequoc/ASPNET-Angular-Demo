@@ -1,6 +1,8 @@
 // Adressen der beiden Microservices (Ports aus appsettings.json / launchSettings.json)
 export const CUSTOMERS_API = 'http://localhost:5001/api/kunden';
+export const CUSTOMERS_HEALTH = 'http://localhost:5001/health';
 export const CUSTOMERS_HUB = 'http://localhost:5001/hubs/kunden';
 export const ORDERS_API = 'http://localhost:5002/api/bestellungen';
+export const ORDERS_HEALTH = 'http://localhost:5002/health';
 // SignalR-Hub des BestellService: schickt neue Bestellungen an alle verbundenen Browser
 export const ORDERS_HUB = 'http://localhost:5002/hubs/bestellungen';

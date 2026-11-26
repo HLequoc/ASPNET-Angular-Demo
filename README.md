@@ -76,6 +76,12 @@ Aktualisierung der anderen Browsern beim Hinzufügen von einem Kunden <br>
         program.cs : MapHub hinzufügen <br>
         <img  style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/14608b28-d07f-4b5f-91dc-802d64271bea" /> <br>
 
+- Die Verbindungstatus mit KundenService und BestellService durch Intervall geprüft <br>
+  <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/26ff2c99-eed3-4913-ba45-35ef424f4d4e" /> <br>
+  und <br>
+  <img style="width: 50%; height: auto;" alt="image" src="https://github.com/user-attachments/assets/cfbed2cb-6298-4be8-a514-e61c9849e57e" /> <br>
+ 
+
 
 
 
